@@ -1,50 +1,111 @@
-# Welcome to your Expo app 👋
+# Notes App – React Native
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple and user-friendly mobile notes application built using **React Native, Expo, TypeScript, and SQLite**. The application allows users to create, view, edit, and delete notes, with data stored locally on the device using SQLite.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Create Notes:** Add new notes with a title and content.
+- **View Notes:** Display all saved notes in an organized list.
+- **Edit Notes:** Update the title and content of existing notes.
+- **Delete Notes:** Remove unwanted notes.
+- **Local Database:** Store notes locally using SQLite.
+- **Persistent Storage:** Retain notes even after closing and reopening the application.
+- **Dark Theme:** Clean dark-themed user interface with red accent colors.
+- **Empty State:** Display a helpful message when no notes are available.
 
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-2. Start the app
+- **React Native** – Mobile application development.
+- **Expo** – Development and application tooling.
+- **TypeScript** – Type-safe development.
+- **Expo SQLite** – Local database management.
+- **Expo Router** – Application navigation.
+- **React Hooks** – State management and lifecycle handling.
 
-   ```bash
-   npx expo start
-   ```
+## Project Structure
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+Notes-App/
+│
+├── .claude/
+├── .vscode/
+├── app/
+│   └── Application screens and navigation
+│
+├── assets/
+│   └── Images and other static resources
+│
+├── db/
+│   └── Database configuration and operations
+│
+├── .gitignore
+├── AGENTS.md
+├── app.json
+├── bun.lock
+├── eslint.config.js
+├── expo-env.d.ts
+├── package.json
+├── README.md
+└── tsconfig.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-## Learn more
+### 1. Clone the Repository
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+git clone https://github.com/goutham-ketham/Notes-App.git
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### 2. Navigate to the Project Directory
 
-## Join the community
+```bash
+cd Notes-App
+```
 
-Join our community of developers creating universal apps.
+### 3. Install Dependencies
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+npm install
+```
+
+### 4. Start the Application
+
+```bash
+npx expo start
+```
+
+Run the application using an Android emulator, iOS simulator, or Expo Go.
+
+## Database
+
+This application uses **Expo SQLite** for local data storage.
+
+The SQLite database contains a `notes` table with the following fields:
+
+| Column | Description |
+|---|---|
+| id | Unique identifier for each note |
+| title | Title of the note |
+| content | Main content of the note |
+| createdAt | Date and time when the note was created |
+
+Database operations include:
+
+- `addNote()` – Insert a new note.
+- `getNotes()` – Retrieve all saved notes.
+- `updateNote()` – Update an existing note.
+- `deleteNote()` – Delete a note.
+- `initDatabase()` – Initialize the database and create the notes table.
+
+## Future Improvements
+
+- Add search functionality to find notes quickly.
+- Implement note categories and tags.
+- Add light and dark theme switching.
+- Support note pinning and favorites.
+- Add cloud synchronization and backup.
+
+## License
+
+This project is developed for learning and educational purposes.
